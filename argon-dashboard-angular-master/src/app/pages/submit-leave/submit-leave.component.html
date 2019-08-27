@@ -1,0 +1,44 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+</div>
+<br>
+<div>
+  <div class="table-responsive">
+    <table class="table align-items-center table-flush">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Họ Tên</th>
+          <th scope="col">Ngày Bắt Đầu</th>
+          <th scope="col">Ngày Kết Thúc</th>
+          <th scope="col">Loại Nghỉ Phép</th>
+          <th scope="col">Lý Do</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let leave of leaves">
+          <td>
+            {{leave.name}}
+          </td>
+          <td>
+            {{leave.startDate}}
+          </td>
+          <td>
+            {{leave.endDate}}
+          </td>
+          <td>
+              {{leave.nameLeaveType}}
+          </td>
+          <td>
+              {{leave.comment}}
+          </td>
+          <td>
+            <a class="btn btn-success"  style="color:rgb(0, 0, 0)" (click)="submitLeave(leave)"> Chấp Nhận</a>
+          </td>
+          <td>
+              <a class="btn btn-danger"  style="color:rgb(0, 0, 0)" (click)="refuseLeave(leave)"> Hủy Bỏ</a>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+</div>
+<div>
+  <p></p>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card text-white bg-secondary mb-3">
+        <h3 class="card-header">Đơn Xin Nghỉ</h3>
+        <div class="alert alert-success" role="alert" *ngIf="message">
+          <strong>{{message}}</strong> 
+        </div>
+        <div class="card-body">
+          <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+            <div class="form-group row" >
+              <label class="col-sm-2 col-form-label">Loại Nghỉ Phép</label>
+              <div class="col-sm-5" >
+                <select  formControlName="leaveTypeId" >
+                  <option *ngFor="let leaveType of leaveTypes" [ngValue]="leaveType.id" >
+                    <a>{{leaveType.name}}</a>
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">From Date </label>
+              <div class="col-sm-3">
+                <input type="date" class="form-control" formControlName="startDate">
+                
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">To Date</label>
+              <div class="col-sm-3">
+                <input type="date" class="form-control" formControlName="endDate">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Chú Thích</label>
+              <div class="col-sm-5">
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                  placeholder="Write text here ..." formControlName="comment"></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-10">
+                <button type="submit" [disabled]="!addForm.valid" class="btn btn-primary">Chấp Nhận</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

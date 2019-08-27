@@ -1,0 +1,49 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+  <!-- Table -->
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <div class="row">
+            <div class="col-9">
+              <p>Danh sách nhân viên</p>
+            </div>
+            <div class="col-3">
+              <button id="btn-reset" type="button" class="btn btn-primary" style="width: 250px">Thêm</button>
+            </div>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+            <tr>
+              <th scope="col">STT</th>
+              <th scope="col">Tên ứng viên</th>
+              <th scope="col">Ngày phỏng vấn</th>
+              <th scope="col">Vị trí ứng tuyển</th>
+              <th scope="col">Người phỏng vấn</th>
+              <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let candidate of candidates ; index as i ">
+              <td>{{i + 1}}</td>
+              <td>{{candidate.name}}</td>
+              <td>{{candidate.interviewDate}}</td>
+              <td>{{candidate.positionId}}</td>
+              <td>{{candidate.userId}}</td>
+              <td>
+                <button (click)="deleteCandidates(candidate.id)" class="btn btn-danger">Xóa</button>
+                <button (click)="candidateDetails(candidate.id)" class="btn btn-info" style="margin-left: 10px">Chi tiết</button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

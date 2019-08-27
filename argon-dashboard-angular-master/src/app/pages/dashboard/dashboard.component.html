@@ -1,0 +1,30 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+</div>
+<p></p>
+<div class="container">
+  <div class="table-responsive">
+  <table class="table align-items-center table-dark table-flush">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">STT</th>
+        <th scope="col">Tên Nhân Viên</th>
+        <th scope="col">Ngày Nghỉ</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let userLeave of usersLeave; index as i ">
+        <td>
+          {{i + 1}}
+        </td>
+        <td>
+          {{userLeave.name}}
+        </td>
+        <td>
+          {{userLeave.startDate}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</div>
